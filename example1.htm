@@ -1,0 +1,58 @@
+<HTML>
+    <head>
+        <style>
+        .results {
+            border-radius:5px;
+            border:1px solid #dddddd;
+            background-color:#efefef;
+            padding:15px
+        }
+        body {
+            padding:10px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        </style>
+    <script>
+
+
+
+      const data = [
+            { id: 18, newsStory: 'Lebron James' },
+            { id: 19, newsStory: 'Tom Brady' },
+            { id: 20, newsStory: 'Lebron James' },
+            { id: 21, newsStory: 'Alex Rodriguez' },
+            { id: 22, newsStory: 'Tom Brady' },
+            { id: 23, newsStory: 'James Harden' },
+            { id: 24, newsStory: 'Tom Brady' },
+            { id: 25, newsStory: 'Stephen A Smith' },
+            { id: 26, newsStory: 'Alex Rodriguez' },
+            { id: 27, newsStory: 'Tom Brady' },
+            { id: 28, newsStory: 'Woj' }
+        ]
+
+        const init = () => {
+
+            // this will convert the object in to an array
+            var obj = data.reduce((a, {newsStory:s}) => (a[s] = (a[s] || 0) + 1, a), {})
+            console.log(obj)
+            document.getElementById('res1').innerHTML = '<pre>' + JSON.stringify(obj) + '</pre>'
+            
+            /////
+
+            // this will convert at array into a 2d array (see output)
+            var countsArr = Object.keys(obj).map(i => { return [String(i), obj[i]]})
+            document.getElementById('res2').innerHTML = '<pre>' + JSON.stringify(countsArr) + '</pre>'
+            console.log(countsArr)
+
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+
+      </script>
+    </head>
+    <body>
+        <div id="res1" class="results"></div>
+        <hr>
+        <div id="res2" class="results"></div>
+    </body>
+</HTML>
