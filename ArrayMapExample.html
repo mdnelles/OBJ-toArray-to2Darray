@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mapper Vs. forEach</title>
+
+    <style>
+h1 {
+  color:#dcAA22;
+  background:#ddd;
+  padding:10px;
+}
+
+p {
+  font-size:20px;
+}        
+    </style>
+<script>
+// Example Of Array Map in Javascript
+var numbers = [1,2,3,4,5,6,7,8,9,10];
+
+numbersx2 = numbers.map(numx2);
+console.log(numbersx2);
+document.getElementById('display').innerHTML += '<br>' +numbersx2
+
+// function to return all array elements * 2
+function init(num){
+  return num * 2;
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>    
+    </head>
+<body>
+    <div class="container">
+Output
+        <div id="display"></div>
+      </div>
+
+</body>
+</html>
